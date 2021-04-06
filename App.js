@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+import HomeScreen   from './src/screens/HomeScreen';
+import ParentScreen from './src/screens/ParentScreen';
+import StateScreen  from './src/screens/StateScreen';
+
+const Stack = createStackNavigator()
+
+export default () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      <Stack.Navigator>
+        <Stack.Screen 
+          name='home' 
+          component={HomeScreen}
+          options={ {title : 'Home Screen' } }/>
+
+        <Stack.Screen 
+          name='parent' 
+          component={ParentScreen} 
+          options={ {title : 'Parent Screen' } }/>
+
+        <Stack.Screen 
+          name='state' 
+          component={StateScreen} 
+          options={ {title : 'State Screen' } }/>
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
+  );
+};
+
+
