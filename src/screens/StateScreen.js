@@ -1,29 +1,25 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, FlatList } from 'react-native';
 
 
 const StateScreen = () => {
   
-  const [ increment, stateIncrement ] = useState(0)
+  const [ increment, setIncrement ] = useState( [] )
   
   return (
     <View>
+      <Button title='Add Item'
+              onPress={ ()=>{ setIncrement( [...increment,'Special'] )} } />
 
-      <View style={ styles.buttonStyle }>
-
-        <Button title=' + ' 
-                color='green'
-                onPress={ ()=>{ stateIncrement( increment+1 ) }} />
-
-        <Button title=' - ' 
-                color='red'
-                onPress={ ()=>{ stateIncrement( increment-1 ) }}  />
-      </View>
-      
-      <View>
-        <Text style={ styles.resultStyle }>{ increment }</Text>
-      </View>
-
+      <FlatList 
+        data={ increment }
+        renderItem={ (element) => {
+          return ( 
+            <Text style={styles.resultStyle}>{ element.item }</Text> 
+          );
+        }}
+         
+      />
     </View> // parent ends
 
   );
@@ -41,6 +37,8 @@ const styles = StyleSheet.create({
     textAlign : 'center',
     fontSize  : 30,
     fontWeight : 'bold',
+    backgroundColor : 'red',
+    marginVertical : 10,
   } 
   
 });

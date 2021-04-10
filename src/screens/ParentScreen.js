@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, FlatList, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import ChildComponent from '../components/ChildComponent';
 

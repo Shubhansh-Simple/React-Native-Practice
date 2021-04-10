@@ -33,6 +33,10 @@ const HomeScreen = ({ navigation }) => {
       <Button title='State>>>' 
               color='green'
               onPress={ ()=>{ navigation.navigate('state') }} />
+
+      <Button title='Colors>>>' 
+              color='lightblue'
+              onPress={ ()=>{ navigation.navigate('color') }} />
     </View>
   );
 };

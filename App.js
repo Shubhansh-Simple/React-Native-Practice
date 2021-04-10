@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen   from './src/screens/HomeScreen';
 import ParentScreen from './src/screens/ParentScreen';
 import StateScreen  from './src/screens/StateScreen';
+import ColorScreen  from './src/screens/ColorScreen';
 
 const Stack = createStackNavigator()
 
@@ -27,6 +28,11 @@ export default () => {
           name='state' 
           component={StateScreen} 
           options={ {title : 'State Screen' } }/>
+
+        <Stack.Screen 
+          name='color' 
+          component={ColorScreen}
+          options={ {title : 'Color Screen' } }/>
 
       </Stack.Navigator>
 
