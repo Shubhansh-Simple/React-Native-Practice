@@ -6,6 +6,7 @@ import HomeScreen   from './src/screens/HomeScreen';
 import ParentScreen from './src/screens/ParentScreen';
 import StateScreen  from './src/screens/StateScreen';
 import ColorScreen  from './src/screens/ColorScreen';
+import InputScreen  from './src/screens/InputScreen';
 
 const Stack = createStackNavigator()
 
@@ -33,6 +34,11 @@ export default () => {
           name='color' 
           component={ColorScreen}
           options={ {title : 'Color Screen' } }/>
+
+        <Stack.Screen 
+          name='input' 
+          component={InputScreen}
+          options={ {title : 'Input Screen' } }/>
 
       </Stack.Navigator>
 

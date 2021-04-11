@@ -1,24 +1,36 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, FlatList } from 'react-native';
 
-
 const StateScreen = () => {
   
   const [ increment, setIncrement ] = useState( [] )
-  
+
   return (
     <View>
-      <Button title='Add Item'
-              onPress={ ()=>{ setIncrement( [...increment,'Special'] )} } />
+
+      <View style={ styles.btnStyle }>
+        <Button title='Add Item'
+                color='lightgreen'
+                onPress={ ()=>{ setIncrement( [...increment,'Special'] )} } />
+      </View>
+
+      {/* CONDITION BASED COMPONENT */}
+      { 
+        increment.length ? 
+        <Text style={ styles.nonEmpty }>Non-empty List</Text> : 
+        <Text style={ styles.empty }>Empty List</Text> 
+      }
 
       <FlatList 
         data={ increment }
         renderItem={ (element) => {
           return ( 
-            <Text style={styles.resultStyle}>{ element.item }</Text> 
+            <Text style={styles.resultStyle}>
+              { element.item} {element.index+1}
+            </Text> 
           );
         }}
-         
+        inverted
       />
     </View> // parent ends
 
@@ -27,7 +39,19 @@ const StateScreen = () => {
 
 const styles = StyleSheet.create({
 
-  buttonStyle : { 
+  empty : {
+    color : 'red',
+    fontSize : 20,
+    textAlign : 'center'
+  },
+
+  nonEmpty : {
+    color : 'green',
+    fontSize : 20,
+    textAlign : 'center'
+  },
+
+  btnStyle : { 
     flexDirection:'row',
     justifyContent:'center',
     marginVertical:10,
@@ -36,7 +60,8 @@ const styles = StyleSheet.create({
   resultStyle : {
     textAlign : 'center',
     fontSize  : 30,
-    fontWeight : 'bold',
+    color     : 'white',
+    fontStyle : 'italic',
     backgroundColor : 'red',
     marginVertical : 10,
   } 
