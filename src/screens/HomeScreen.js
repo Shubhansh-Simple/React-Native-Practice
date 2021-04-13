@@ -26,21 +26,33 @@ const HomeScreen = ({ navigation }) => {
         }}
       />
 
-      <Button title='Parent>>>' 
-              color='red'
-              onPress={ ()=>{ navigation.navigate('parent') }} />
+      <View style={ styles.btnStyle }>
 
-      <Button title='State>>>' 
-              color='green'
-              onPress={ ()=>{ navigation.navigate('state') }} />
+        <Button title='Parent>>>' 
+                color='red'
+                onPress={ ()=>{ navigation.navigate('parent') }} />
 
-      <Button title='Colors>>>' 
-              color='lightblue'
-              onPress={ ()=>{ navigation.navigate('color') }} />
+        <Button title='State>>>' 
+                color='green'
+                onPress={ ()=>{ navigation.navigate('state') }} />
 
-      <Button title='Inputs>>>' 
-              color='blue'
-              onPress={ ()=>{ navigation.navigate('input') }} />
+        <Button title='Colors>>>' 
+                color='lightblue'
+                onPress={ ()=>{ navigation.navigate('color') }} />
+
+        <Button title='Inputs>>>' 
+                color='blue'
+                onPress={ ()=>{ navigation.navigate('input') }} />
+
+        <Button title='Styles>>>' 
+                color='purple'
+                onPress={ ()=>{ navigation.navigate('style') }} />
+
+        <Button title='Api Calling>>>' 
+                color='grey'
+                onPress={ ()=>{ navigation.navigate('api') }} />
+      </View>
+
     </View>
   );
 };
@@ -52,6 +64,14 @@ const styles = StyleSheet.create({
     fontStyle : 'italic',
     fontWeight: 'bold',
     color : 'orange',
+  },
+
+  btnStyle : {
+    alignItems : 'center',
+    borderWidth : 2,
+    backgroundColor : 'black',
+    marginTop : 5,
+
   }
 
 });

@@ -7,6 +7,8 @@ import ParentScreen from './src/screens/ParentScreen';
 import StateScreen  from './src/screens/StateScreen';
 import ColorScreen  from './src/screens/ColorScreen';
 import InputScreen  from './src/screens/InputScreen';
+import StyleScreen  from './src/screens/StyleScreen';
+import ApiScreen    from './src/screens/ApiScreen';
 
 const Stack = createStackNavigator()
 
@@ -39,6 +41,16 @@ export default () => {
           name='input' 
           component={InputScreen}
           options={ {title : 'Input Screen' } }/>
+
+        <Stack.Screen 
+          name='style' 
+          component={StyleScreen}
+          options={ {title : 'Styling Practice' } }/>
+
+        <Stack.Screen 
+          name='api' 
+          component={ApiScreen}
+          options={ {title : 'Api Calling' } }/>
 
       </Stack.Navigator>
 

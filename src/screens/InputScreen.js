@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { View, Button, TextInput, Text, StyleSheet } from 'react-native';
+import apiRequest from '../api/apiRequest';
 
 // it's a function bro.
 const InputScreen = () => {
@@ -29,6 +30,16 @@ const InputScreen = () => {
         <View style={ styles.secondStyle }></View>
         <View style={ styles.threeStyle }></View>
       </View>
+
+      <View style={{ borderWidth:1, marginVertical:10 }}></View>
+
+      <Button 
+        title='Call Api'
+        color='black'
+        onPress={ async ()=> { 
+                  const response =  await apiRequest.get('users') 
+                  console.log( response.data )
+                }} />
 
     </View>
   );
