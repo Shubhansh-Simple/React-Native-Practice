@@ -147,6 +147,26 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <C-f> :FZF<CR>
 
 
+" How you install Vim and making it as IDLE it's a complete guide
+" Making Vim as a Idle
+" 
+" Install vim  > 8.2      from itsfloss site
+" Install git             from apt-get install git
+" Install python3-pip     from apt-get install python3-pip   # git is required here
+" Install node > 12.0     from coc.nvim site
+" 
+" 
+" Download plug.vim       from Vim-Plug github page
+" :PlugInstall            Install all vim plugins
+" 
+" Set up pylint           Just open any .py file it's prompt # pip is required here 
+" Set up coc-pyright      from CocInstall coc-pyright
+" 
+" # For System Clipboard sharing
+" # + and - 
+" Install gvim            from apt-get install vim-gnome
+
+
 
 
 
